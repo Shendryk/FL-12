@@ -1,7 +1,3 @@
-h1, h2, h3, h4, h5, h6 {
-	text-align: center;
-}
-
 @media print {
 
 	.container {
@@ -46,7 +42,7 @@ h1, h2, h3, h4, h5, h6 {
 	.heading ol {
 		width: 300px;
 		list-style: none;
-		padding-inline-start: 0;
+		padding: 0;
 		display: flex;
 		flex-direction: column;
 	}
@@ -55,19 +51,17 @@ h1, h2, h3, h4, h5, h6 {
 		align-self: flex-end;	
 	}
 
-	/* 10) */
-	.blocks .tm-team-description-container p:last-child {
-		
-		font-style: italic;
-		letter-spacing:5px;
-		word-spacing: 10px;
-	}
 
 }
 
+@media screen {
 
 
-/* 2) Add a hover effect for the navigation items (background color – lightskyblue , text color - #fff). (see Figure 2). */
+h1, h2, h3, h4, h5, h6 {
+	text-align: center;
+}
+
+
 .tm-main-nav li:hover {
 	background-color: lightskyblue;
 }
@@ -75,7 +69,7 @@ h1, h2, h3, h4, h5, h6 {
 	color: #fff;
 }
 
-/* 3) Add gradient from “lightskyblue” color to “burlywood “color for the banner.( see Figure 3) */
+
 .tm-banner {
 	background: linear-gradient(45deg, lightskyblue, burlywood);
 }
@@ -84,13 +78,9 @@ h1, h2, h3, h4, h5, h6 {
 	background-color: #fff;
 }
 
-/* 4) The banner text should have a shadow. Color of shadow - #333. (see Figure 3) */
 .tm-banner-inner p {
 	text-shadow: 4px 5px 3px #333;
 }
-
-/* 5) Add animation to the banners text. Make it move from right (200px) to center.
-(see examples/animation.gif). */
 
 .tm-banner-inner p {
 	animation: slide-left 5s; 
@@ -105,10 +95,6 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
-/* 6) Add styles for “What we do” section (see Figure 4):
--  Picture from right side.
-- Text from left side and in the center of section.
-- Text “What we do” should be in the center. */
 
 .tm-content-box.flex-2-col {
 	display: flex;
@@ -118,6 +104,11 @@ h1, h2, h3, h4, h5, h6 {
 	display: flex;
 	flex-wrap: wrap;
 	align-self: center;
+	
+}
+
+.tm-team-description-container p {
+	text-indent: 20px;
 }
 
 .tm-team-img img {
@@ -133,3 +124,137 @@ h1, h2, h3, h4, h5, h6 {
 .tm-section-title {
 	text-align: center;
 }
+
+#about .box-bg:hover {
+	background-color: lightgrey;
+
+}
+
+.heading.tm-content-box ol {
+	list-style-type: lower-alpha;
+}
+
+.heading.tm-content-box ol a.text::after {
+	content: "New";
+	color: red;
+	vertical-align: super;
+	font-weight: bold;
+	font-variant: small-caps;
+	font-size: x-small;	
+}
+
+.heading.tm-content-box ol a:hover::before {
+	content: ">";
+}
+
+.blocks .boxes.gallery-container li {
+	padding: 10px;	
+	font-style: italic;
+}
+
+.blocks .boxes.gallery-container li h2 {
+	text-align: left;
+	font-style: normal;
+}
+
+.blocks .boxes.gallery-container li p:first-letter {
+	font-weight: 400;
+}
+
+
+.blocks .boxes.gallery-container li:nth-child(odd) {
+	background-color: lightskyblue;
+	color: #fff;
+}
+
+.tm-section-description {
+    text-indent: 25px;
+    line-height: 30px;
+  }
+
+
+
+  #contact h2 {
+    text-align: left;
+  }
+
+  #contact_name,
+  #contact_email,
+  #contact_subject {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-color: lightskyblue;
+  }
+
+  #contact_name:focus,
+  #contact_email:focus,
+  #contact_subject:focus {
+    background-color: lightskyblue;
+  }
+
+  .submit-btn {
+    border-color: lightskyblue;
+    background-color: #fff;
+    color: lightskyblue;
+
+    float: right;
+    height: 50px;
+    width: 100px;
+    font-size: 14px;
+  }
+
+  .tm-main-nav, section, #home {
+    box-shadow: 0px 0px 9px rgba(61, 55, 61, 0.7);
+  }
+
+  section::before {
+    content: "";
+	border-right: 50px solid transparent;
+    border-top: 50px solid lightskyblue;
+  }
+
+
+
+  div.form-group:nth-child(4) {
+	position: relative;
+}
+
+div.form-group:nth-child(4)::after {
+	content: "";
+	display: block;
+	background-image: url(../img/email-icon.png);
+	background-size: cover;
+	height: 30px;
+	width: 30px;
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+.blocks .tm-team-description-container p:last-child {
+		
+	font-style: italic;
+	letter-spacing:5px;
+	word-spacing: 10px;
+}
+
+
