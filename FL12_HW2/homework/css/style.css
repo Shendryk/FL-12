@@ -1,5 +1,135 @@
-/*
+h1, h2, h3, h4, h5, h6 {
+	text-align: center;
+}
 
-write your code here
+@media print {
 
-*/
+	.container {
+    max-width: 95%;
+}
+
+	.tm-main-content {
+		padding-top: 0;
+	}
+
+	.tm-content-box {
+		margin-bottom: 10px;
+	}
+
+	.padding-medium, .tm-banner, .carousel {
+    padding: 0;
+	}
+
+	h1, h2, h3, h4, h5, h6, p {
+		text-align: center;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		color: lightskyblue;
+		text-transform: uppercase;
+	}
+
+	.tm-team-description-container {
+		min-width: 100%;
+		max-width: 100%;
+	}
+
+  .tm-sidebar, .flex-item.tm-team-img, #about, .boxes.gallery-container, .img-contact-us, #contact, .carousel-indicators {
+    display: none;
+	}
+	
+	.heading {
+		display: flex;
+		justify-content: center;
+	}
+
+	.heading ol {
+		width: 300px;
+		list-style: none;
+		padding-inline-start: 0;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.heading ol li:nth-child(odd) {
+		align-self: flex-end;	
+	}
+
+	/* 10) */
+	.blocks .tm-team-description-container p:last-child {
+		
+		font-style: italic;
+		letter-spacing:5px;
+		word-spacing: 10px;
+	}
+
+}
+
+
+
+/* 2) Add a hover effect for the navigation items (background color – lightskyblue , text color - #fff). (see Figure 2). */
+.tm-main-nav li:hover {
+	background-color: lightskyblue;
+}
+.tm-main-nav li a:hover {
+	color: #fff;
+}
+
+/* 3) Add gradient from “lightskyblue” color to “burlywood “color for the banner.( see Figure 3) */
+.tm-banner {
+	background: linear-gradient(45deg, lightskyblue, burlywood);
+}
+
+.tm-banner-inner {
+	background-color: #fff;
+}
+
+/* 4) The banner text should have a shadow. Color of shadow - #333. (see Figure 3) */
+.tm-banner-inner p {
+	text-shadow: 4px 5px 3px #333;
+}
+
+/* 5) Add animation to the banners text. Make it move from right (200px) to center.
+(see examples/animation.gif). */
+
+.tm-banner-inner p {
+	animation: slide-left 5s; 
+}
+
+@keyframes slide-left{
+	0%{
+			-webkit-transform: translate(200px, 0px);
+	}
+	100%{
+			-webkit-transform: translate(0px, 0px);
+	}
+}
+
+/* 6) Add styles for “What we do” section (see Figure 4):
+-  Picture from right side.
+- Text from left side and in the center of section.
+- Text “What we do” should be in the center. */
+
+.tm-content-box.flex-2-col {
+	display: flex;
+}
+
+.tm-team-description-container {
+	display: flex;
+	flex-wrap: wrap;
+	align-self: center;
+}
+
+.tm-team-img img {
+	width: 100%;
+}
+
+.tm-team-img {
+	display: flex;
+	flex-wrap: wrap;
+
+}
+
+.tm-section-title {
+	text-align: center;
+}
