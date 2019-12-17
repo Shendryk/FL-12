@@ -5,35 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- <link href="https://fonts.googleapis.com/css?family=Hind:400,600%7CSource+Sans+Pro:400,600,700%7CFresca" rel="stylesheet"/> -->
-
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title>Front-end lab</title>
 </head>
 
 <body>
-<header class="header">
-	<div class="nav-wrap">
-		<div class="nav-container">
-		<div class="nav-logo">
-			<a href="#">Front-end lab</a>
-		</div>
-		<nav class="nav-items">
-				<a href="#">Home</a>
-				<a href="#">About</a>
-				<a href="#">Gallery</a>
-				<a href="#">Contact</a>
-			
-		</nav>
+<header class="header">	
+	<div class="nav-logo">
+		<a href="#">FRONT-END LAB</a>
 	</div>
-	</div>
-	<div class="header-banner">
-		<h1>Hello! This is Front-end Lab.</h1>
-		<p>EPAM Front-end Lab</p>
-		<a href="#">Discover more</a>
-	</div>
+	<nav class="nav-items">
+		<a href="#" class="active">Home</a>
+		<a href="#">About</a>
+		<a href="#">Gallery</a>
+		<a href="#">Contact</a>
+	</nav>	
 </header>
 <main class="main">
+	<div class="main-banner">
+		<section class="banner-wrap">
+			<h1>Hello! This is Front-end Lab.</h1>
+			<p>EPAM Front-end Lab</p>
+			<a class="btn" href="#">Discover more</a>
+		</section>
+	</div>
 <div class="main-wrap">
 	<article class="article">
 		<img src="./img/blog-image1.jpg" alt="blog-image1" class="article-img">
@@ -112,8 +107,8 @@
 			<h3>Talk to us</h3>
 			<ul>
 				<li>512 Delicious Street, San Francisco, CA 10880</li>
-				<li>010-020-0990</li>
-				<li>info@company.com</li>
+				<li><a href="tel:+010-020-0990">010-020-0990</a></li>
+				<li><a href="mailto:info@company.com">info@company.com</a></li>
 			</ul>
 		</div>
 	</div>
