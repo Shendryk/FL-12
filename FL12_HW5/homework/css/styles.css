@@ -30,3 +30,97 @@ body {
 }
 
 /* Your styles go here */
+
+body, p, h1, h2, h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  top: 0;
+  background-color: #024161;
+  width: 1400px;
+	height: 100px;
+	margin: 0 auto;
+  align-items: center;
+}
+
+.header .nav-logo a {
+  text-decoration: none;
+  font-size: 25px;
+  color: #777;
+  font-weight: bold;
+}
+
+.header .nav-items a {
+  margin-left: 15px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #777;
+}
+
+.header .nav-items a:hover {
+  color: #bfba55;
+}
+
+.header .nav-items .active {
+  color: #bfba55;
+}
+
+.main {
+  margin: 0 auto;
+  width: 1400px;
+}
+
+.main .main-banner {
+  background: url(../img/post0.jpg) no-repeat;
+  background-size: cover;
+  background-position-x: center;
+}
+
+.main .main-banner .banner-wrap {
+  height: 800px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.main .main-banner .banner-wrap h1 {
+  font-size: 62px;
+  color: #fff;
+}
+
+.main .main-banner .banner-wrap p {
+  color: #bfba55;
+  padding: 20px 0;
+  letter-spacing: 3px;
+}
+
+.main .main-banner .banner-wrap a {
+  display: inline-block;
+  background-color: #fff;
+  margin-top: 20px;
+  padding: 15px 25px;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #777;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.main .main-banner .banner-wrap a:hover {
+  background-color: #bfba55;
+  color: #fff;
+}
+
+.main .main-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+}
