@@ -31,66 +31,118 @@ body {
 
 /* Your styles go here */
 
-body, p, h1, h2, h3 {
+body {
   margin: 0;
-  padding: 0;
+	padding: 0;
+	background: var(--bg-color--dark);
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+	padding: 0;
 }
 
 .header {
-  display: flex;
-  justify-content: space-around;
-  position: fixed;
-  top: 0;
-  background-color: #024161;
-  width: 1400px;
-	height: 100px;
+	margin-bottom: 20px;
+}
+
+.header a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.header .container {
+	padding: 0 30px;
+	box-sizing: border-box;
+	background: var(--bg-color--header);
+}
+
+.container {
+	max-width: 1400px;
 	margin: 0 auto;
-  align-items: center;
+	
+	color: var(--link);
 }
 
-.header .nav-logo a {
-  text-decoration: none;
-  font-size: 25px;
-  color: #777;
-  font-weight: bold;
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  padding: 20px 0;
 }
 
-.header .nav-items a {
-  margin-left: 15px;
-  text-decoration: none;
-  font-size: 18px;
-  color: #777;
+.logo {
+  flex-grow: 0.5;
+  margin: 10px 15px 10px auto;
 }
 
-.header .nav-items a:hover {
-  color: #bfba55;
+.menu {
+  flex-grow: 0.5;
+  text-align: right;
+  /* margin: 10px 0; */
 }
 
-.header .nav-items .active {
-  color: #bfba55;
+.logo__title {
+  display: inline-block;
+  font-size: 1.8rem;
+  line-height: 1.5rem;
+  vertical-align: bottom;
 }
 
-.main {
+.logo__image {
+  vertical-align: bottom;
+}
+
+.menuItem {
+	/* margin: 0 15px; */
+	padding: 35px 25px 30px 25px;
+}
+.menuItem:hover {
+	background-color: var(--link--hover);
+}
+
+
+.titles {
+  text-align: center;
+  padding: 20px 0;
+}
+
+
+
+
+
+/*MAIN*/
+
+/* .main {
   margin: 0 auto;
   width: 1400px;
+} */
+
+.post {
+	overflow:hidden;
+}
+.post img {
+	width: 100%;
+	height: auto;
+	overflow:hidden;
 }
 
-.main .main-banner {
+
+/* .main .main-banner {
   background: url(../img/post0.jpg) no-repeat;
-  background-size: cover;
   background-position-x: center;
-}
+} */
 
-.main .main-banner .banner-wrap {
-  height: 800px;
+
+/* .main .main-banner .banner-wrap {
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
-}
-
+} */
+/* 
 .main .main-banner .banner-wrap h1 {
   font-size: 62px;
   color: #fff;
@@ -123,4 +175,4 @@ body, p, h1, h2, h3 {
 .main .main-wrap {
   max-width: 900px;
   margin: 0 auto;
-}
+} */
