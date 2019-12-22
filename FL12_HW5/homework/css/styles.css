@@ -1,7 +1,7 @@
 /*
  * Feel free to change name of colors if you need it
  * Feel free to add new colors if you need it
- */
+ 
 :root {
   --bg-color--dark: #0b192f;
   --bg-color--header: #024161;
@@ -9,6 +9,7 @@
   --link--hover: #1f52a4;
   --bg-footer-color: #024161;
 }
+*/
 
 body {
   font-family: roboto;
@@ -29,21 +30,40 @@ body {
 	background: #2d95bb;
 }
 
-/* Your styles go here */
-
 body {
   margin: 0;
 	padding: 0;
-	background: var(--bg-color--dark);
+	background: #0b192f;
 }
 
 p, h1, h2, h3, h4, h5, h6 {
 	margin: 0;
-	padding: 0;
+  padding: 0;
+  font-weight: lighter;
+}
+
+h1 {
+  font-size: 4vw;
+  padding-bottom: 0.8vw;
+}
+
+h2 {
+  font-size: 3vw;
+  padding-bottom: 0.8vw;
+}
+
+h3 {
+  font-size: 2.5vw;
+  padding-bottom: 0.8vw;
+}
+
+.header, .main, .footer {
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .header {
-	margin-bottom: 20px;
+  font-weight: lighter;
 }
 
 .header a {
@@ -54,14 +74,13 @@ p, h1, h2, h3, h4, h5, h6 {
 .header .container {
 	padding: 0 30px;
 	box-sizing: border-box;
-	background: var(--bg-color--header);
+	background: #024161;
 }
 
 .container {
 	max-width: 1400px;
 	margin: 0 auto;
-	
-	color: var(--link);
+	color: #fff;
 }
 
 .row {
@@ -79,7 +98,6 @@ p, h1, h2, h3, h4, h5, h6 {
 .menu {
   flex-grow: 0.5;
   text-align: right;
-  /* margin: 10px 0; */
 }
 
 .logo__title {
@@ -89,90 +107,285 @@ p, h1, h2, h3, h4, h5, h6 {
   vertical-align: bottom;
 }
 
+.logo__title span {
+  color: #9d27b0;
+  font-weight: 300;
+}
+
 .logo__image {
   vertical-align: bottom;
 }
 
 .menuItem {
-	/* margin: 0 15px; */
 	padding: 35px 25px 30px 25px;
 }
 .menuItem:hover {
-	background-color: var(--link--hover);
+	background-color: #1f52a4;
 }
 
-
-.titles {
-  text-align: center;
-  padding: 20px 0;
+.main {
+  margin: 20px 5px;
 }
 
-
-
-
-
-/*MAIN*/
-
-/* .main {
-  margin: 0 auto;
-  width: 1400px;
-} */
-
-.post {
-	overflow:hidden;
-}
-.post img {
-	width: 100%;
-	height: auto;
-	overflow:hidden;
+.main .container {
+  display: flex;
 }
 
-
-/* .main .main-banner {
-  background: url(../img/post0.jpg) no-repeat;
-  background-position-x: center;
-} */
-
-
-/* .main .main-banner .banner-wrap {
+.banner {
+  background-image: url(../img/post0.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  padding: 20px;
+  padding-bottom: 30px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  align-items: flex-start;
-} */
-/* 
-.main .main-banner .banner-wrap h1 {
-  font-size: 62px;
   color: #fff;
+  margin-bottom: 20px;
 }
 
-.main .main-banner .banner-wrap p {
-  color: #bfba55;
-  padding: 20px 0;
-  letter-spacing: 3px;
+.banner-text {
+  max-width: 500px;
 }
 
-.main .main-banner .banner-wrap a {
-  display: inline-block;
+.post {
+  display: flex;
+  flex-grow: 1;
+  margin-bottom: -4px;
+}
+.post-img img {
+	width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.post-img:hover {
+  opacity: 0.5;
+}
+
+.post-img {
+  min-width: 50%;
+  object-fit: cover;
+}
+
+.post-content {
+  display: flex;
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  max-width: 75%;
+}
+
+.post-text {
+  padding: 3%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.post-text:hover {
+  opacity: 0.5;
+}
+
+.post .post-time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 3.3vw;
+  line-height: 2.5vw; 
+  opacity: 0.2;
+  margin: 0;
+}
+
+.post .post-time span {
+  font-size: 1.8vw;
+}
+
+.post:nth-child(odd) .post-time {
+  position: absolute;
+  top: 10px;
+  right: 5px;
+}
+
+.post:nth-child(even) .post-time {
+  position: absolute;
+  top: 10px;  
+}
+
+.post-news {
   background-color: #fff;
-  margin-top: 20px;
-  padding: 15px 25px;
-  border-radius: 50px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #777;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  margin-bottom: 10px;
+  color: #000;
 }
 
-.main .main-banner .banner-wrap a:hover {
-  background-color: #bfba55;
-  color: #fff;
+.post-news img {
+  width: 100%;
+	height: auto;
 }
 
-.main .main-wrap {
-  max-width: 900px;
-  margin: 0 auto;
-} */
+.news {
+  max-width: 25%;
+  margin-left: 10px;
+}
+
+.news .news-text {
+  background-color: #fff;
+  padding: 20px;
+}
+
+.footer .container {
+  padding: 30px 30px;
+  box-sizing: border-box;
+  background: #024161;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer p {
+  padding: 5px 0;
+}
+
+.post:nth-child(even) {
+  flex-direction: row-reverse; 
+}
+
+.post:nth-child(even) .post-text {
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+
+  .menu::before {
+    content: "\002630";
+    display: block;
+    font-size: 1.5em;
+}
+
+.row {
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.logo {
+  flex-grow: 0.5;
+  margin:  10px auto;
+}
+
+.menu-wrapper {
+  display: none;
+}
+
+h1 {
+  font-size: 6vw;
+}
+h2 {
+  font-size: 5vw;
+}
+h3 {
+  font-size: 3.5vw;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-text {
+  padding: 12%;
+}
+
+.post:nth-child(even) {
+  flex-direction: column;
+}
+
+.post:nth-child(even) .post-text {
+  text-align: left;
+}
+
+.post:nth-child(even) .post-time {
+  position: absolute;
+  top: 10px;
+  /* left: none; */
+  right: 5px;
+  /* align-items: right; */
+  font-size: 7.3vw;
+  line-height: 4.5vw;
+  opacity: 0.5;
+}
+
+.post:nth-child(odd) .post-time {
+  font-size: 7.3vw;
+  line-height: 4.5vw;
+  opacity: 0.5;
+}
+
+.post .post-time span {
+  font-size: 3vw;
+}
+
+.footer .container {
+  padding: 30px 30px;
+  box-sizing: border-box;
+  background: #024161;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footer-copyright, .footer-name {
+  text-align: center;
+}
+
+.banner {
+  height: 300px;
+}
+
+.banner-text {
+  max-width: 100%;
+}
+
+
+    
+}               
+
+
+@media (max-width: 480px) {
+
+  h1 {
+    font-size: 8vw;
+  }
+  h2 {
+    font-size: 7vw;
+  }
+  h3 {
+    font-size: 5vw;
+  }
+
+
+
+  .main .container {
+    display: flex;
+    flex-direction: column;
+}
+
+.posts {
+  min-width: 100%;
+}
+
+.post-text {
+  padding: 15%;
+}
+
+.news {
+  max-width: 100%;
+  min-width: 100%;
+  margin-left: 0;
+}
+
+}
