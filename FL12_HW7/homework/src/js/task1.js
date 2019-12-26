@@ -27,7 +27,28 @@ Step 3. Change the password:
 	If user write the same new – show “You have successfully changed your password.” //use alert()
 */
 
-let email = prompt('Input email')
-if (email == "0") {
-	console.log(0);
+let email = prompt('Input email');
+let login = "user@gmail.com";
+let password;
+
+
+if (email === null) {
+	alert("Canceled.")
+	
+} else if (email.length < 5) {
+	alert("I don't know any emails having name length less than 5 symbols")
+} else if (email === login) {
+	console.log(true); 
+	password = prompt('Input password')
+} else {
+	console.log(false); 
+	alert("I don’t know you")
+}
+
+if (password === null) {
+	alert("Canceled.")
+} else if (email === 'user@gmail.com' && password === 'UserPass' || email === 'admin@gmail.com' && password === 'AdminPass' ) {
+	console.log(true)
+} else {
+	console.log(false)
 }
