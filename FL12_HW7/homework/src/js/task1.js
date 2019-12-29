@@ -1,54 +1,67 @@
-/*
-Task #1. Check the email and change the password
-Write the code which verify user rights.
+let emailInput = prompt('Input email');
+let passInput;
+let email = ['user@gmail.com', 'admin@gmail.com'];
+let pass = ['UserPass', 'AdminPass']
 
-Step 1. Check login
-	Ask user for an email // use prompt()
-	If the input is an empty line or Esc – show “Canceled.” // for showing - use alert()
-	If the input length less than 5 symbols - show “I don't know any emails having name length less than 5 symbols”. 
-	If the visitor enters "user@gmail.com" or "admin@gmail.com" then prompt for a password.
-	If it’s another string – then show “I don’t know you”.
-
-
-Step 2. Check password:
-	For an empty string or cancelled input, show “Canceled.”
-	For email "user@gmail.com" correct password is “UserPass”, for "admin@gmail.com" correct password is  “AdminPass”. In other case, show “Wrong password”.
-
-
-Step 3. Change the password:
-	1) Suggest user/admin to change his password – “Do you want to change your password?”. //use confirm()
-	In case the user clicks the 'Cancel' button, the message “You have failed the change.” //use alert()
-	2) If user clicked ‘Ok’ – ask to write the old password (use prompt() ) and validate it as at Step 2. 
-	3) If the visitor enters correct old password for current email then prompt for a new password.
-	If the input is an empty line or ‘Cancel’ button is clicked  – show “Canceled” //use alert()
-	If the input length less than 6 – show  “It’s too short password. Sorry.”
-	4) If the new password is valid ask to enter it again.//use prompt()
-	If the inputted value  doesn’t match the new password from 3) – show “You wrote the wrong password.”
-	If user write the same new – show “You have successfully changed your password.” //use alert()
-*/
-
-let email = prompt('Input email');
-let login = "user@gmail.com";
-let password;
-
-
-if (email === null) {
-	alert("Canceled.")
+if (emailInput === null) {
+	alert('Canceled.')
 	
-} else if (email.length < 5) {
-	alert("I don't know any emails having name length less than 5 symbols")
-} else if (email === login) {
+} else if (emailInput.length < 5) {
+	alert('I don\'t know any emails having name length less than 5 symbols')
+} else if (emailInput === email[0] || emailInput === email[1] ) {
 	console.log(true); 
-	password = prompt('Input password')
+	passInput = prompt('Input password')
+
+	if (passInput === null) {
+		alert('Canceled.')
+	} else if (emailInput === email[0] && passInput === pass[0] || emailInput === email[1] && passInput === pass[1] ) {
+		console.log(true)
+		let passValid = passInput;
+		let passСhange = confirm('Do you want to change your password?');
+
+		console.log(passСhange);
+		if (passСhange) {
+
+			console.log('нажали кнопку подтвердить смену пароля')
+			let passOld = prompt('Write the old password');
+			if (passValid === passOld) {
+				console.log('прошли проверку старого пароля')
+				let passNew = prompt('Input new password')
+				console.log('вводим новый пароль')
+				if (passNew === null) {
+					console.log('если не ввели новый пароль или нажали ескейп')
+
+					alert('Canceled.');
+				} else if (passNew.length < 6) {
+					console.log('проверка на длинну нового пароля')
+					alert('It\'s too short password. Sorry.')
+				} else {
+					
+					let passConfirmation = prompt('Confirm new password');
+					console.log('вводи подтверждения пароля')
+					if ( passNew === passConfirmation) {
+						console.log('если пароли совпали')
+						alert('You have successfully changed your password.')
+					} else {
+						console.log('пароль не правильный')
+						alert('You wrote the wrong password.')
+					}
+				}
+				// console.log('пароль валидный')
+			} else {
+				alert('You have refused to enter the current password');
+			}
+
+		} else {
+			alert('You have failed the change.');
+		}
+
+	} else {
+		alert('Wrong password');
+		console.log(false)
+	}
+
 } else {
 	console.log(false); 
-	alert("I don’t know you")
-}
-
-if (password === null) {
-	alert("Canceled.")
-} else if (email === 'user@gmail.com' && password === 'UserPass' || email === 'admin@gmail.com' && password === 'AdminPass' ) {
-	console.log(true)
-} else {
-	console.log(false)
+	alert('I don’t know you')
 }
