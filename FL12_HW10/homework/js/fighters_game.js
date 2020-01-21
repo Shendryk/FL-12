@@ -64,12 +64,54 @@ function Fighter(obj) {
   
     this.heal = function (addHeal) {
       hp += addHeal;
-      // return
     }
   
     this.dealDamage = function (damage) {
       hp -= damage;
-       // return
     }
   
   }
+
+
+
+function battle(fighter, fighter2) {
+      
+
+function round () {
+    
+  fighter.attack(fighter2);
+  fighter2.attack(fighter);
+  if (fighter.getHealth() >= 0 && fighter2.getHealth() <= 0) {
+      fighter2.addLoss();
+      fighter.addWin();
+      console.log(`${fighter.getName()} has Won!`);
+  } else if (fighter2.getHealth() >= 0 && fighter.getHealth() <= 0) {
+      fighter.addLoss();
+      fighter2.addWin();
+      console.log(`${fighter2.getName()} has Won!`);
+  } 
+}
+
+while(fighter.getHealth() > 0 || fighter2.getHealth() > 0) {
+    if (fighter.getHealth() <= 0) {
+        console.log(`${fighter.getName()} is dead and can't fight`);
+        break;
+    }
+    if (fighter2.getHealth() <= 0) {
+        console.log(`${fighter2.getName()} is dead and can't fight`);
+        break;
+    }
+    
+    round();
+    if (!fighter.getHealth() > 0 || !fighter2.getHealth() > 0) {
+        break;
+    }
+    
+}
+}
+
+const myFighter = new Fighter({ name: 'Maximus', damage: 25, hp: 150, strength: 30, agility: 25 });
+const myFighter2 = new Fighter({ name: 'Commodus', damage: 30, hp: 100, strength: 40, agility: 15 });
+
+
+battle(myFighter, myFighter2);
