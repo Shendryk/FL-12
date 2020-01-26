@@ -37,34 +37,33 @@ const structure = [
 
 const rootNode = document.getElementById('root');
 
-// Todo: your code goes here
-for (let i = 0; i < structure.length; i += 1) {
-  let obj = structure[i];
-	//   console.log(obj.folder);
-	
-  if (obj.folder === true ){
-		// console.log(1)
-		console.log(`${obj.folder}`);
-		// let ul = document.createElement('UL');
-		let li = document.createElement('LI');
-		li.innerHTML = obj.title;
-		rootNode.appendChild(li);
 
-		if (obj.children !== null ) {
-			console.log(5);
-		}
-		// .appendChild(li);
 
+function derevo (arr) {
+ 
+  for (let i = 0; i < arr.length; i += 1) {
+    let obj = arr[i];
+    console.log(obj);
+    
+    if(obj.folder === true){
+
+      let li = document.createElement('li');
+      let ul = document.createElement('ul');
+      ul.appendChild(li).innerHTML = obj.title;
+      rootNode.appendChild(ul);
+
+      if(obj.children !== null || obj.children !== false) {
+        derevo(obj.children)
+      }
+    } else {
+      let li = document.createElement('li');
+      let ul = document.createElement('ul');
+      ul.appendChild(li).innerHTML = obj.title;
+      rootNode.appendChild(ul);
+    }
   }
-  // for (let key in obj) {
-  //   let value = obj[key];
-    // console.log(obj)
-		// console.log(`key: ${key}, value: ${value}`);
-		// if ()
-    // console.log(`${key}: ${value}`);
-    // console.log(obj.folder)
-    //     if(obj.folder)
-
-    // }
-  // }
 }
+// rootNode.appendChild(ul);
+// rootNode.appendChild(catalog);
+
+ derevo(structure);
